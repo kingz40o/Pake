@@ -135,7 +135,7 @@ jobs:
         with:
           name: output-${{ inputs.platform }}.zip
           #path: node_modules/pake-cli/*.dmg
-          path: /Users/runner/work/Pake/Pake/node_modules/pake-cli/src-tauri/target/universal-apple-darwin/release/bundle/dmg/*
+          path: /Users/runner/work/Pake/Pake/node_modules/pake-cli/src-tauri/target/*
           retention-days: 3
 
       - name: Rust cache store
