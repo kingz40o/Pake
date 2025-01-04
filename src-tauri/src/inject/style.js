@@ -119,7 +119,8 @@ window.addEventListener('DOMContentLoaded', _event => {
       display: none !important;
     }
 
-    #react-root [data-testid="DMDrawer"] {
+    #react-root [data-testid="DMDrawer"],
+    #root > main > footer.justify-center.ease-in {
       visibility: hidden !important;
     }
 
@@ -312,7 +313,7 @@ window.addEventListener('DOMContentLoaded', _event => {
     }
 
     #__next .overflow-hidden>.overflow-x-hidden .scrollbar-trigger > nav {
-      padding-top: 30px;
+      padding-top: 12px;
     }
 
     #__next > div.relative.z-0.flex.h-full.w-full.overflow-hidden > div.relative.flex.h-full.max-w-full.flex-1.flex-col.overflow-hidden > main > div.flex.h-full.flex-col > div.flex-1.overflow-hidden > div > div.absolute.left-0.right-0 > div > div.flex.items-center.gap-2 > button{
@@ -320,8 +321,26 @@ window.addEventListener('DOMContentLoaded', _event => {
       margin-right: -10px;
     }
 
+    #__next > div.relative.z-0.flex.h-full.w-full.overflow-hidden > div.dark.flex-shrink-0.overflow-x-hidden.bg-black > div > div > div > div > nav > div.flex.flex-col.pt-2.empty\\:hidden.dark\\:border-white\\/20 > a,
+    #__next > div.relative.z-0.flex.h-full.w-full.overflow-hidden > div.relative.flex.h-full.max-w-full.flex-1.flex-col.overflow-hidden > main > div.group.fixed.bottom-3.right-3.z-10.hidden.gap-1.lg\\:flex > div,
+    #__next > div.relative.z-0.flex.h-full.w-full.overflow-hidden > div.flex-shrink-0.overflow-x-hidden.bg-token-sidebar-surface-primary > div > div > div > div > nav > div.flex.flex-col.pt-2.empty\\:hidden.dark\\:border-white\\/20 > a {
+      display: none;
+    }
+
+    #__next .md\\:px-\\[60px\\].text-token-text-secondary.text-xs.text-center.py-2.px-2.relative{
+      visibility:hidden;
+    }
+
     #__next>div>div>.flex.h-screen.w-full.flex-col.items-center {
       padding-top: 20px;
+    }
+    
+    body > div.relative.flex.h-full.w-full.overflow-hidden.transition-colors.z-0 > div.z-\\[21\\].flex-shrink-0.overflow-x-hidden.bg-token-sidebar-surface-primary.max-md\\:\\!w-0 > div > div > div > nav > div.flex.justify-between.h-\\[60px\\].items-center.md\\:h-header-height {
+       padding-top: 25px;
+    }
+    
+    body > div.relative.flex.h-full.w-full.overflow-hidden.transition-colors.z-0 > div.relative.flex.h-full.max-w-full.flex-1.flex-col.overflow-hidden > main > div.composer-parent.flex.h-full.flex-col.focus-visible\\:outline-0 > div.flex-1.overflow-hidden.\\@container\\/thread > div > div.absolute.left-0.right-0 > div{
+      padding-top: 35px;
     }
 
     #__next .sticky.left-0.right-0.top-0.z-20.bg-black{
@@ -330,6 +349,10 @@ window.addEventListener('DOMContentLoaded', _event => {
 
     #header-area > div > .css-gtiexd > div:nth-child(1) > div, #header-area .logoIcon .user-info{
       padding-top: 20px;
+    }
+
+    #__next > div.relative.z-0.flex.h-full.w-full.overflow-hidden > div.flex-shrink-0.overflow-x-hidden.bg-token-sidebar-surface-primary > div > div > div > div > nav, #__next > div.relative.z-0.flex.h-full.w-full.overflow-hidden > div.relative.flex.h-full.max-w-full.flex-1.flex-col.overflow-hidden > main {
+      padding-top: 6px;
     }
 
     #__next > div.AnnouncementWrapper_container__Z51yh > div > aside.SidebarLayout_sidebar__SXeDJ.SidebarLayout_left__k163a > div > div > header{
@@ -364,6 +387,10 @@ window.addEventListener('DOMContentLoaded', _event => {
     .lark > .main-wrapper [data-testid="aside"] {
       top: 15px;
     }
+    
+    #global > div.header-container > .mask-paper {
+      padding-top: 20px;
+    }
 
     #background.ytd-masthead {
       height: 68px;
@@ -373,12 +400,12 @@ window.addEventListener('DOMContentLoaded', _event => {
       top: 28px;
     }
 
-    #pack-top-dom:active {
+    #pake-top-dom:active {
       cursor: grabbing;
       cursor: -webkit-grabbing;
     }
 
-    #pack-top-dom{
+    #pake-top-dom{
       position:fixed;
       background:transparent;
       top:0;
@@ -388,7 +415,7 @@ window.addEventListener('DOMContentLoaded', _event => {
       -webkit-app-region: drag;
       user-select: none;
       -webkit-user-select: none;
-      z-index: 90000;
+      z-index: 99999;
     }
 
     @media (max-width:767px){
@@ -402,7 +429,7 @@ window.addEventListener('DOMContentLoaded', _event => {
     }
   `;
   const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-  if (window.pakeWindowTitleTransparent && isMac) {
+  if (window['pakeConfig']?.hide_title_bar && isMac) {
     const topPaddingStyleElement = document.createElement('style');
     topPaddingStyleElement.innerHTML = topPaddingCSS;
     document.head.appendChild(topPaddingStyleElement);
