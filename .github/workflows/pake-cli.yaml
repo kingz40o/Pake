@@ -134,8 +134,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: output-${{ inputs.platform }}.zip
-          path: node_modules/pake-cli/*.dmg
-          #path: node_modules/pake-cli/src-tauri/target/universal-apple-darwin/release/bundle/dmg/*.dmg
+          #path: node_modules/pake-cli/*.dmg
+          path: /Users/runner/work/Pake/Pake/node_modules/pake-cli/src-tauri/target/universal-apple-darwin/release/bundle/dmg/*
           retention-days: 3
 
       - name: Rust cache store
